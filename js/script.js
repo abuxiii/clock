@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const hoursElem = document.querySelector(".stopwatch__hours");
     const minutesElem = document.querySelector(".stopwatch__minutes");
     const secondsElem = document.querySelector(".stopwatch__seconds");
-    const spanIndicator = document.querySelector(".tabsLink__span"); // Select the span element
+    const spanIndicator = document.querySelector(".tabsLink__span");
 
     let interval;
     let elapsedTime = 0;
@@ -96,8 +96,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function startStopwatch() {
         stopwatchBtn.textContent = "stop";
-        spanIndicator.classList.add("active"); // Add the 'active' class
-        spanIndicator.classList.remove("active_clear"); // Ensure 'active_clear' is removed if it was there
+        spanIndicator.classList.add("active"); 
+        spanIndicator.classList.remove("active_clear"); 
         interval = setInterval(() => {
             elapsedTime++;
             updateStopwatch();
@@ -107,15 +107,15 @@ document.addEventListener("DOMContentLoaded", function () {
     function stopStopwatch() {
         clearInterval(interval);
         stopwatchBtn.textContent = "clear";
-        spanIndicator.classList.remove("active"); // Remove the 'active' class
-        spanIndicator.classList.add("active_clear"); // Add the 'active_clear' class
+        spanIndicator.classList.remove("active"); 
+        spanIndicator.classList.add("active_clear"); 
     }
 
     function clearStopwatch() {
         elapsedTime = 0;
         updateStopwatch();
         stopwatchBtn.textContent = "start";
-        spanIndicator.classList.remove("active", "active_clear"); // Remove both classes
+        spanIndicator.classList.remove("active", "active_clear"); 
     }
 
     function updateStopwatch() {
